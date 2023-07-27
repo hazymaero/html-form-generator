@@ -7,11 +7,20 @@
     -moz-osx-font-smoothing: grayscale;
     -webkit-text-size-adjust: 100%;
 
-    --button-color: #646cff;
+    --accent-color: #646cff;
     --background-color: rgb(20, 20, 20);
     --text-color: rgb(240, 240, 240);
     --foreground-color: rgb(10, 10, 10);
-    --accent-color: crimson;
+    --secondary-accent-color: crimson;
+
+    font-family: "Poppins";
+    line-height: 0em;
+}
+
+h1 {
+    font-weight: 900;
+    font-size: 2.5em;
+    text-decoration: underline;
 }
 
 body {
@@ -38,10 +47,10 @@ button {
     font-size: 1em;
     font-weight: 500;
     font-family: inherit;
-    background-color: #1a1a1a;
-    cursor: pointer;
-    transition: background-color 0.1s ease-in;
+    background-color: var(--accent-color);
+    transition: all 0.1s ease-in;
 }
 button:hover {
-    background-color: #646cff;
+    filter: brightness(75%);
+    background-color: var(--accent-color);
 }
