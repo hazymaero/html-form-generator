@@ -31,7 +31,7 @@
         outline: none;
         padding: 0.5em;
         color: var(--text-color);
-        background-color: rgb(30, 30, 30);
+        background-color: var(--background-color);
         border-radius: 0.4em;
         margin-left: 0.5em;
         font-family: "Poppins";
