@@ -18,13 +18,16 @@
 
 <style>
     .main-content {
+        margin-top: 3em;
         width: 50em;
         height: 35em;
 
+        background-color: var(--foreground-color);
+        border-radius: 1.5em;
     }
 
     h2 {
-        margin-top: 1.35em;
+        line-height: 2.5em;
         font-size: 1.75em;
         font-weight: 800;
         text-decoration: none;
