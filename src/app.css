@@ -10,17 +10,21 @@
     --accent-color: #646cff;
     --background-color: rgb(20, 20, 20);
     --text-color: rgb(240, 240, 240);
-    --foreground-color: rgb(10, 10, 10);
+    --foreground-color: rgb(5, 5, 5);
     --secondary-accent-color: crimson;
 
     font-family: "Poppins";
     line-height: 0em;
 }
 
-h1 {
+h1, h2, h3, h4, h5 {
     font-weight: 900;
-    font-size: 2.5em;
     text-decoration: underline;
+    color: var(--accent-color);
+}
+
+h1 {
+    font-size: 2.5em;
 }
 
 body {
@@ -51,6 +55,9 @@ button {
     transition: all 0.1s ease-in;
 }
 button:hover {
+    filter: brightness(85%);
+}
+
+button:active {
     filter: brightness(75%);
-    background-color: var(--accent-color);
 }

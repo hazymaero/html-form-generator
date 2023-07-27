@@ -1,9 +1,12 @@
 <script>
-    import Form from "./components/Form.svelte";
+    import FormCreator from "./components/FormCreator.svelte";
 
 </script>
-<main>
-    <h1 style="color: var(--accent-color)">HTML Form Generator</h1>
 
-    <Form />
-</main>
+<center>
+    <main>
+        <h1>HTML Form Generator</h1>
+
+        <FormCreator />
+    </main>
+</center>
