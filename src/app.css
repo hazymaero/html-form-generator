@@ -6,6 +6,7 @@
     --text-color: #fafafa;
     --foreground-color: #1a1a1a;
     --secondary-accent-color: #fecde4;
+    --border-regular-color: #333333; 
 
     font-family: "Poppins";
     line-height: 0em;
@@ -70,4 +71,39 @@ select {
 }
 select:hover {
     filter: brightness(140%);
+}
+
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input {
+    outline: none;
+    padding: 0.5em;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    border-radius: 0.4em;
+    margin-left: 0.5em;
+    font-family: "Poppins";
+    border-color: transparent;
+
+    transition: all 0.2s ease-in;
+}
+
+input[type=text], input[type=number] {
+    border-left-color: transparent;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-width: 0.3em;
+    padding: 0.8em;
+
+    border-bottom-color: var(--border-regular-color);
+    -webkit-backface-visibility: hidden;
+
+-webkit-transform-style: preserve-3d;
+}
+
+input[type=text]:focus, input[type=number]:focus {
+    border-bottom-color: var(--accent-color);
 }

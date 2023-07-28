@@ -10,19 +10,25 @@
         console.log("submit");
     }
 
+    const handleInputTypeChange = (e) => {
+        inputType = e.detail.newInputType;
+    }
+
 </script>
 
 
 <Modal on:visibility-change visibility={true}>
     <div slot="content" class="main-content">
         <h2>Add Input</h2>
-        <InputTypeForm on:input-type-change={(e) => inputType = e.detail.newInputType} />
-        <button class="submit-button" on:click={handleSubmit}>Add</button>
-    </div>
+        <InputTypeForm on:input-type-change={handleInputTypeChange} />
+        <button class="submit-button" on:click={(e) => handleInputTypeChange(e)}>Add</button>
+        
+        <hr>
 
-    {#if inputType === InputType.Text}
-        <TextInputEditor />
-    {/if}
+        {#if inputType == InputType.Text}
+            <TextInputEditor />
+        {/if}
+    </div>
 </Modal>
 
 <style>
@@ -34,6 +40,10 @@
 
         background-color: var(--foreground-color);
         border-radius: 1.5em;
+    }
+
+    hr {
+        margin: 2em;
     }
 
     h2 {

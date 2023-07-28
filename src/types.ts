@@ -1,7 +1,7 @@
 export enum InputType {
-    Text = "text",
-    Number = "number",
-    Option = "option",
+    Text = "Text",
+    Number = "Number",
+    Option = "Option",
 }
 
 export interface NewInputParamaters {
