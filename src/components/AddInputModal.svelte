@@ -2,8 +2,10 @@
     import Modal from "./Modal.svelte";
     import InputTypeForm from "./InputTypeForm.svelte";"./InputTypeForm.svelte";
     import { slide } from "svelte/transition";
+    import { InputType } from "../types";
 
     export let visibility: boolean = false;
+    let inputType: InputType = InputType.Text; 
 
     const handleSubmit = () => {
         console.log("submit");
@@ -16,7 +18,7 @@
         <Modal visibility={true}>
             <div slot="content" class="main-content">
                 <h2>Add Input</h2>
-                <InputTypeForm />
+                <InputTypeForm on:input-type-change={(e) => inputType = e.detail.newInputType} />
                 <button class="submit-button" on:click={handleSubmit}>Add</button>
             </div>
         </Modal>
