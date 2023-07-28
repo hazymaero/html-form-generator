@@ -17,15 +17,15 @@
             <div slot="content" class="main-content">
                 <h2>Add Input</h2>
                 <InputTypeForm />
+                <button class="submit-button" on:click={handleSubmit}>Add</button>
             </div>
         </Modal>
     </div>
-
-    <button class="submit-button" on:click={handleSubmit}>Add</button>
 {/if}
 
 <style>
     .main-content {
+        position: relative;
         margin-top: 3em;
         width: 50em;
         height: 35em;
@@ -43,6 +43,8 @@
 
     .submit-button {
         position: absolute;
-        bottom: 9em;
+        bottom: 1em;
+        top: auto;
+        /* bottom: 0%; */
     }
 </style>

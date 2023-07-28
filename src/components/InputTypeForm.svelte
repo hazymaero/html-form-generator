@@ -1,7 +1,7 @@
 <script lang="ts">
     import { InputType } from "../types";
 
-    export let inputType: InputType;
+    export let inputType: InputType = InputType.Text;
 </script>
 
 <div class="form-container">
