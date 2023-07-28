@@ -4,6 +4,10 @@
     import { slide } from "svelte/transition";
 
     export let visibility: boolean = false;
+
+    const handleSubmit = () => {
+        console.log("submit");
+    }
 </script>
 
 
@@ -16,6 +20,8 @@
             </div>
         </Modal>
     </div>
+
+    <button class="submit-button" on:click={handleSubmit}>Add</button>
 {/if}
 
 <style>
@@ -33,5 +39,10 @@
         font-size: 1.75em;
         font-weight: 800;
         text-decoration: none;
+    }
+
+    .submit-button {
+        position: absolute;
+        bottom: 9em;
     }
 </style>

@@ -55,3 +55,19 @@ button:hover {
 button:active {
     filter: brightness(75%);
 }
+
+select {
+    outline: none;
+    padding: 0.5em;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    border-radius: 0.4em;
+    margin-left: 0.5em;
+    font-family: "Poppins";
+    border-color: transparent;
+
+    transition: all 0.1s ease-in;
+}
+select:hover {
+    filter: brightness(140%);
+}
