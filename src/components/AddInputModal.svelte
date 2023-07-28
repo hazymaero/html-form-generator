@@ -1,29 +1,29 @@
 <script lang="ts">
     import Modal from "./Modal.svelte";
     import InputTypeForm from "./InputTypeForm.svelte";"./InputTypeForm.svelte";
-    import { slide } from "svelte/transition";
     import { InputType } from "../types";
+    import TextInputEditor from "./TextInputEditor.svelte";
 
-    export let visibility: boolean = false;
     let inputType: InputType = InputType.Text; 
 
     const handleSubmit = () => {
         console.log("submit");
     }
+
 </script>
 
 
-{#if visibility}
-    <div transition:slide class="main-container">
-        <Modal visibility={true}>
-            <div slot="content" class="main-content">
-                <h2>Add Input</h2>
-                <InputTypeForm on:input-type-change={(e) => inputType = e.detail.newInputType} />
-                <button class="submit-button" on:click={handleSubmit}>Add</button>
-            </div>
-        </Modal>
+<Modal on:visibility-change visibility={true}>
+    <div slot="content" class="main-content">
+        <h2>Add Input</h2>
+        <InputTypeForm on:input-type-change={(e) => inputType = e.detail.newInputType} />
+        <button class="submit-button" on:click={handleSubmit}>Add</button>
     </div>
-{/if}
+
+    {#if inputType === InputType.Text}
+        <TextInputEditor />
+    {/if}
+</Modal>
 
 <style>
     .main-content {
@@ -47,6 +47,5 @@
         position: absolute;
         bottom: 1em;
         top: auto;
-        /* bottom: 0%; */
     }
 </style>

@@ -1,13 +1,14 @@
 <script lang="ts">
     import AddInputModal from "./AddInputModal.svelte";
+    import { fade, type FadeParams } from "svelte/transition";
 
     let addModalVisibility: boolean = false;
     let disableAddButton: boolean = false;
+    const fadeTransitionParameters: FadeParams = { duration: 250 };
 
-    $: {
-        if (addModalVisibility === true) {
-            disableAddButton = true;
-        }
+    const handleVisibilityChange = () => {
+        addModalVisibility = false;
+        disableAddButton = false;
     }
 
     const handleAddInput = () => {
@@ -18,7 +19,11 @@
 <div class="main-container">
     <button disabled={disableAddButton} on:click={handleAddInput} class="add-input-button">+ Add</button>
 
-    <AddInputModal visibility={addModalVisibility} />
+    {#if addModalVisibility}
+        <div transition:fade={fadeTransitionParameters}>
+            <AddInputModal on:visibility-change={handleVisibilityChange}  />
+        </div>
+    {/if}
 </div>
 
 <style>

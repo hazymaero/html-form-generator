@@ -1,19 +1,24 @@
 <script lang="ts">
+    import { createEventDispatcher } from "svelte";
+
     export let visibility: boolean = false;
+
+    const handleClickSelf = () => {
+        dispatchVisibilityChange('visibility-change', { newVisibility: visibility });
+    }
+    const dispatchVisibilityChange = createEventDispatcher();
 </script>
 
-<div class="main-container">
-    <div class="slot-wrapper">
+<!-- svelte-ignore a11y-click-events-have-key-events -->
+<!-- svelte-ignore a11y-no-static-element-interactions -->
+{#if visibility}
+    <div  class="backdrop" on:click|self={handleClickSelf}>
         <slot name="content"></slot>
     </div>
-</div>
-
+{/if}
 <style>
-    .main-container {
-        position: relative;
-    }
-
-    .slot-wrapper {
+    .backdrop {
+        background-color: rgba(0, 0, 0, 0.25);
         position: fixed;
         top: 50%;
         left: 50%;
@@ -21,6 +26,5 @@
 
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.25);
-    }
+}
 </style>
