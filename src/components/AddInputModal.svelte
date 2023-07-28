@@ -1,6 +1,6 @@
 <script lang="ts">
     import Modal from "./Modal.svelte";
-    import Form from "./Form.svelte";
+    import InputTypeForm from "./InputTypeForm.svelte";"./InputTypeForm.svelte";
     import { slide } from "svelte/transition";
 
     export let visibility: boolean = false;
@@ -12,7 +12,7 @@
         <Modal visibility={true}>
             <div slot="content" class="main-content">
                 <h2>Add Input</h2>
-                <Form />
+                <InputTypeForm />
             </div>
         </Modal>
     </div>
