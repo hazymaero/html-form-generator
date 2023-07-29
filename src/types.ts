@@ -9,3 +9,9 @@ export interface NewInputParamaters {
     placeHolderText?: string,
     options?: string[],
 }
+
+export interface TextInputParameters {
+    label: string,
+    placeHolderText: string,
+    id: string,
+}
