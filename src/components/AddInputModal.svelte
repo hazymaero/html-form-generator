@@ -4,14 +4,20 @@
     import { InputType } from "../types";
     import TextInputEditor from "./TextInputEditor.svelte";
     import { createEventDispatcher } from "svelte";
+    import OptionInputEditor from "./OptionInputEditor.svelte";
 
     let inputType: InputType = InputType.Text; 
+    let optionEditorInstance: any;
     let textEditorInstance: any;
 
     const handleSubmit = () => {
         switch (inputType) {
             case InputType.Text:
-                dispatchSubmit('submit', { type: inputType, parameters: textEditorInstance.parameters });
+                dispatchSubmit('submit', { type: inputType, parameters: textEditorInstance.GetParameters() });
+                break;
+
+            case InputType.Option:
+                dispatchSubmit('submit', { type: inputType, parameters: optionEditorInstance.GetParameters() })
                 break;
 
             default:
@@ -19,7 +25,7 @@
         }
     }
 
-    const handleInputTypeChange = (e) => {
+    const handleInputTypeChange = (e: any) => {
         inputType = e.detail.newInputType;
     }
 
@@ -30,12 +36,15 @@
     <div slot="content" class="main-content">
         <h2>Add Input</h2>
         <InputTypeForm on:input-type-change={handleInputTypeChange} />
-        <button class="submit-button" on:click={(e) => handleInputTypeChange(e)}>Add</button>
+        <button class="submit-button" on:click={(e) => handleSubmit()}>Add</button>
         
         <hr>
 
         {#if inputType == InputType.Text}
             <TextInputEditor bind:this={textEditorInstance} />
+
+            {:else if inputType == InputType.Option}
+                <OptionInputEditor bind:this={optionEditorInstance} />
         {/if}
     </div>
 </Modal>

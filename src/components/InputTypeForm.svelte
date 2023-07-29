@@ -14,6 +14,6 @@
     <select bind:value={inputType} id="inputTypeSelect">
         <option>Text</option>
         <option>Number</option>
-        <option>Options</option>
+        <option>Option</option>
     </select>
 </div>

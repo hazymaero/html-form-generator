@@ -15,3 +15,9 @@ export interface TextInputParameters {
     placeHolderText: string,
     id: string,
 }
+
+export interface OptionInputParameters {
+    options: string[],
+    label: string,
+    id: string,
+}

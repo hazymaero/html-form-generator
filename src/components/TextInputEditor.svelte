@@ -1,39 +1,23 @@
 <script lang="ts">
     import type { TextInputParameters } from "../types";
 
-    let placeholderText: string = "";
-    let id: string = "";
-    let label: string = "";
-
-    export let parameters: TextInputParameters = { 
-        placeholderText: placeholderText,
-        id: id,
-        label: label
-    } as TextInputParameters;
-
-    $: {
-        parameters = { 
-            placeholderText: placeholderText,
-            id: id,
-            label: label
-        } as TextInputParameters;
-        console.log(parameters);
-    }
+    let parameters: TextInputParameters = {} as TextInputParameters;
+    export const GetParameters = (): TextInputParameters => { return parameters; }
 </script>
 
 <div class="main-content">
     <label for="idInput">ID for Input: </label>
-    <input bind:value={id} type="text" id="idInput" />
+    <input placeholder="Type ID" bind:value={parameters.id} type="text" id="idInput" />
 
     <br>
 
     <label for="labelInput">Label: </label>
-    <input bind:value={label} type="text" id="labelInput" />
+    <input placeholder="Type label" bind:value={parameters.label} type="text" id="labelInput" />
 
     <br>
 
     <label for="placeholderInput">Placeholder Text: </label>
-    <input bind:value={placeholderText} type="text" id="placeholderInput" />
+    <input placeholder="Type placeholder text" bind:value={parameters.placeHolderText} type="text" id="placeholderInput" />
 </div>
 
 <style>
@@ -42,7 +26,7 @@
     }
 
     #labelInput {
-        margin-left: 7.25em;
+        margin-left: 7.5em;
     }
 
     #placeholderInput {
