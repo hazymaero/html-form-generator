@@ -23,18 +23,19 @@
 <style>
     .main-content {
         text-align: center;
+        --base-margin: 6em;
     }
 
     #labelInput {
-        margin-left: 7.5em;
+        margin-left: calc(var(--base-margin) + 3.25em);
     }
 
     #placeholderInput {
-        margin-left: 0.75em;
+        margin-left: calc(var(--base-margin) - 3.5em);
     }
 
     input {
-        margin-left: 4.25em;
+        margin-left: var(--base-margin);
         margin-top: 1em;
     }
 </style>
