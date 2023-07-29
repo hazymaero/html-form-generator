@@ -21,3 +21,10 @@ export interface OptionInputParameters {
     label: string,
     id: string,
 }
+
+export interface NumberInputParameters {
+    label: string,
+    id: string,
+    placeHolder: string,
+    incrementButtonsDisabled: boolean,
+}
