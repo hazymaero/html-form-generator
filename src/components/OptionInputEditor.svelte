@@ -34,6 +34,10 @@
         --base-margin: 6em;
     }
 
+    label {
+        font-family: "Poppins";
+    }
+
     #labelInput {
         margin-left: calc(var(--base-margin) + 3.25em);
     }
