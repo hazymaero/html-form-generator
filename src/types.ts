@@ -21,3 +21,15 @@ export interface NumberInputParameters {
     id: string,
     placeHolder: string,
 }
+
+export const isEmptyTextParameters = (param: TextInputParameters): boolean => {
+    return (param.label == undefined || param.id == undefined || param.placeHolder == undefined);
+}
+
+export const isEmptyNumberParameters = (param: NumberInputParameters): boolean => {
+    return (param.label == undefined || param.id == undefined || param.placeHolder == undefined);
+}
+
+export const isEmptyOptionParameters = (param: OptionInputParameters): boolean => {
+    return (param.label == undefined || param.id == undefined || param.options.length == 0);
+}

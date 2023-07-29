@@ -1,7 +1,7 @@
 <script lang="ts">
     import Modal from "./Modal.svelte";
-    import InputTypeForm from "./InputTypeForm.svelte";"./InputTypeForm.svelte";
-    import { InputType } from "../types";
+    import InputTypeForm from "./InputTypeForm.svelte";
+    import { InputType, isEmptyTextParameters, isEmptyNumberParameters, isEmptyOptionParameters } from "../types";
     import TextInputEditor from "./TextInputEditor.svelte";
     import { createEventDispatcher } from "svelte";
     import OptionInputEditor from "./OptionInputEditor.svelte";
@@ -15,14 +15,17 @@
     const handleSubmit = () => {
         switch (inputType) {
             case InputType.Text:
+                if (isEmptyTextParameters(textEditorInstance.GetParameters())) return;
                 dispatchSubmit('submit', { type: inputType, parameters: textEditorInstance.GetParameters() });
                 break;
 
             case InputType.Option:
+                if (isEmptyOptionParameters(optionEditorInstance.GetParameters())) return;
                 dispatchSubmit('submit', { type: inputType, parameters: optionEditorInstance.GetParameters() });
                 break;
 
             case InputType.Number:
+                if (isEmptyNumberParameters(numberEditorInstance.GetParameters())) return;
                 dispatchSubmit('submit', { type: inputType, parameters: numberEditorInstance.GetParameters() });
 
             default:

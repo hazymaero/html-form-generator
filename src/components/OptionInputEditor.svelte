@@ -9,7 +9,6 @@
     const handleFormatOptions = () => {
         let words: string[] = unformattedOptions.trim().split(' ');
         parameters.options = words;
-        console.log(words);
     }
 </script>
 
