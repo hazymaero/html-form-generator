@@ -52,7 +52,7 @@
                 <OptionInputEditor bind:this={optionEditorInstance} />
 
             {:else if inputType == InputType.Number}
-                <NumberInputEditor />
+                <NumberInputEditor bind:this={numberEditorInstance} />
         {/if}
     </div>
 </Modal>
