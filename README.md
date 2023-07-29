@@ -10,8 +10,6 @@ It includes creating select, number, and text inputs all with including labels a
 
 When creating selects seperate the options with spaces
 
-Ex:
-
-One Two Three
+Ex: One Two Three
 
 This creates three options.
