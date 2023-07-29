@@ -99,11 +99,9 @@ input[type=text], input[type=number] {
     padding: 0.8em;
 
     border-bottom-color: var(--border-regular-color);
-    -webkit-backface-visibility: hidden;
-
--webkit-transform-style: preserve-3d;
 }
 
 input[type=text]:focus, input[type=number]:focus {
     border-bottom-color: var(--accent-color);
 }
+

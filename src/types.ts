@@ -4,15 +4,9 @@ export enum InputType {
     Option = "Option",
 }
 
-export interface NewInputParamaters {
-    inputType: InputType,
-    placeHolderText?: string,
-    options?: string[],
-}
-
 export interface TextInputParameters {
     label: string,
-    placeHolderText: string,
+    placeHolder: string,
     id: string,
 }
 
@@ -26,5 +20,4 @@ export interface NumberInputParameters {
     label: string,
     id: string,
     placeHolder: string,
-    incrementButtonsDisabled: boolean,
 }

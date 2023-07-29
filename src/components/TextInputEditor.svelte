@@ -17,7 +17,7 @@
     <br>
 
     <label for="placeholderInput">Placeholder Text: </label>
-    <input placeholder="Type placeholder text" bind:value={parameters.placeHolderText} type="text" id="placeholderInput" />
+    <input placeholder="Type placeholder text" bind:value={parameters.placeHolder} type="text" id="placeholderInput" />
 </div>
 
 <style>
