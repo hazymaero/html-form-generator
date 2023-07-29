@@ -1,7 +1,24 @@
 <script lang="ts">
-    export let placeholderText: string = "";
-    export let id: string = "";
-    export let label: string = "";
+    import type { TextInputParameters } from "../types";
+
+    let placeholderText: string = "";
+    let id: string = "";
+    let label: string = "";
+
+    export let parameters: TextInputParameters = { 
+        placeholderText: placeholderText,
+        id: id,
+        label: label
+    } as TextInputParameters;
+
+    $: {
+        parameters = { 
+            placeholderText: placeholderText,
+            id: id,
+            label: label
+        } as TextInputParameters;
+        console.log(parameters);
+    }
 </script>
 
 <div class="main-content">

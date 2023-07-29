@@ -3,19 +3,28 @@
     import InputTypeForm from "./InputTypeForm.svelte";"./InputTypeForm.svelte";
     import { InputType } from "../types";
     import TextInputEditor from "./TextInputEditor.svelte";
+    import { createEventDispatcher } from "svelte";
 
     let inputType: InputType = InputType.Text; 
+    let textEditorInstance: any;
 
     const handleSubmit = () => {
-        console.log("submit");
+        switch (inputType) {
+            case InputType.Text:
+                dispatchSubmit('submit', { type: inputType, parameters: textEditorInstance.parameters });
+                break;
+
+            default:
+                break;
+        }
     }
 
     const handleInputTypeChange = (e) => {
         inputType = e.detail.newInputType;
     }
 
+    const dispatchSubmit = createEventDispatcher();
 </script>
-
 
 <Modal on:visibility-change visibility={true}>
     <div slot="content" class="main-content">
@@ -26,7 +35,7 @@
         <hr>
 
         {#if inputType == InputType.Text}
-            <TextInputEditor />
+            <TextInputEditor bind:this={textEditorInstance} />
         {/if}
     </div>
 </Modal>
